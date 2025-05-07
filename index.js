@@ -39,7 +39,7 @@ app.put("/:id", async (req, res) => {
   const reqId = req.params.id;
   const task = await Tasks.findOneAndUpdate(
     { _id: reqId },
-    { taskName: req.body.task, status: req.body.status }
+    { taskName: req.body.taskName, status: req.body.status }
   );
   res.send(task);
 });
